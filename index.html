@@ -18,22 +18,24 @@
 	
 	<script>
 		window.onload = function() {
-  			function getParameters() {
-				let urlString =window.location.href;
-				
-			
-				let paramString = urlString.split('?')[1];
-				
-				let queryString = new URLSearchParams(paramString);
-			
-				for (let pair of queryString.entries()) {
-					console.log("Key is:" + pair[0]);
-					console.log("Value is:" + pair[1]);
-				}
-			}
-		};
+			const queryString = window.location.search;
+	     	const urlParams = new URLSearchParams(queryString);
+	    	const redirect_uri = urlParams.get('state')
+	    	const code = urlParams.get('code')
+	    	console.log(code);
+	    	console.log(redirect_uri);
+	    	console.log(queryString);
+	     	window.location.href=redirect_uri+'&fk_code='+code;
 		
+		};
+			
 	</script>
 </body>
 
 </html>
+
+
+
+		
+		
+	
