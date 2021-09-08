@@ -18,6 +18,7 @@
 	
 	<script>
 		window.onload = function() {
+			console.log("load called");
 			const queryString = window.location.search;
 	     	const urlParams = new URLSearchParams(queryString);
 	    	const redirect_uri = urlParams.get('state')
@@ -25,7 +26,10 @@
 	    	console.log(code);
 	    	console.log(redirect_uri);
 	    	console.log(queryString);
-	     	window.location.href=redirect_uri+'&fk_code='+code;
+
+	     	redirect_uri=redirect_uri+'&fk_code='+code;
+	     	window.open(
+              redirect_uri, "_blank");
 		
 		};
 			
