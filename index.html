@@ -12,13 +12,11 @@
 		Unicommerce
 	</h1>
 	
-	<button onclick="getParameters()">
-		Get URL parameters
-	</button>
+	
 	
 	<script>
 		window.onload = function() {
-			console.log("load called");
+			console.log("load");
 			const queryString = window.location.search;
 	     	const urlParams = new URLSearchParams(queryString);
 	    	const redirect_uri = urlParams.get('state')
@@ -26,10 +24,8 @@
 	    	console.log(code);
 	    	console.log(redirect_uri);
 	    	console.log(queryString);
-
-	     	redirect_uri=redirect_uri+'&fk_code='+code;
-	     	window.open(
-              redirect_uri, "_blank");
+	    	window.location.href=redirect_uri+'&fk_code='+code;
+	     	
 		
 		};
 			
