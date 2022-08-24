@@ -3,7 +3,7 @@
 
 <head>
 	<title>
-		Unicommerce Hraiom
+		Unicommerce XERO OAuth
 	</title>
 </head>
 
@@ -12,21 +12,18 @@
 		Unicommerce
 	</h1>
 	
-	
+	<p>redirecting....</p>
 	
 	<script>
 		window.onload = function() {
-			console.log("load");
-			const queryString = window.location.search;
+		const queryString = window.location.search;
 	     	const urlParams = new URLSearchParams(queryString);
 	    	const redirect_uri = urlParams.get('state')
 	    	const code = urlParams.get('code')
 	    	console.log(code);
 	    	console.log(redirect_uri);
 	    	console.log(queryString);
-	    	window.location.href=redirect_uri+'&fk_code='+code;
-	     	
-		
+	    	window.location.href=redirect_uri+'&authCode='+code;
 		};
 			
 	</script>
