@@ -3,7 +3,7 @@
 
 <head>
 	<title>
-		Unicommerce XERO OAuth
+		Unicommerce <> TikTok Shop OAuth
 	</title>
 </head>
 
@@ -12,15 +12,13 @@
 		Unicommerce
 	</h1>
 	
-	<p>redirecting....</p>
+	<p>Redirecting...</p>
 	
 	<script>
 		window.onload = function() {
 		const queryString = window.location.search;
 	     	const urlParams = new URLSearchParams(queryString);
 	    	const redirect_uri = urlParams.get('state')
-	    	const code = urlParams.get('code')
-	    	console.log(code);
 	    	console.log(redirect_uri);
 	    	console.log(queryString);
 	    	window.location.href=redirect_uri+'?authCode='+code;
